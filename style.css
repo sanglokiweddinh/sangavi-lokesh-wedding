@@ -2,12 +2,23 @@ body {
   margin: 0;
   font-family: 'Playfair Display', serif;
   text-align: center;
-  background: url('images/bg.jpg') center/cover no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+  background: url('bg.jpg') center/cover no-repeat;
 }
-/* 💌 ENVELOPE /
+
+/* Soft overlay /
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 248, 240, 0.85);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/ 💌 Envelope /
 .envelope {
   height: 100vh;
   display: flex;
@@ -21,39 +32,54 @@ body {
   border-radius: 10px;
   background: white;
   font-family: 'Great Vibes', cursive;
-  font-size: 24px;
+  font-size: 26px;
 }
 
-/ HIDDEN MAIN /
+/ Hide main initially /
 .hidden {
   display: none;
 }
 
-/ HERO /
+/ Hero /
 .hero {
-  padding: 50px;
+  padding: 50px 20px;
 }
 
 h1 {
   font-family: 'Great Vibes', cursive;
-  font-size: 42px;
+  font-size: 48px;
   color: #8b5e83;
 }
 
-/ COUNTDOWN /
 .countdown {
   padding: 30px;
-  font-size: 20px;
 }
 
-/ EVENTS /
+/ Events /
 .events {
   display: flex;
   justify-content: center;
   gap: 40px;
+  padding: 20px;
+  flex-wrap: wrap;
 }
 
-/ 🎼 BUTTON /
+.event {
+  margin: 10px;
+}
+
+/ Buttons /
+.event a {
+  display: inline-block;
+  padding: 12px 18px;
+  background: #8b5e83;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/ 🎼 Music button /
 .music-btn {
   position: fixed;
   top: 20px;
@@ -63,9 +89,10 @@ h1 {
   color: white;
   padding: 10px;
   border-radius: 50%;
+  z-index: 10;
 }
 
-/ 🌸 PETALS /
+/ 🌸 Petals /
 .petal {
   position: fixed;
   top: -10px;
@@ -82,40 +109,13 @@ h1 {
   }
 }
 
-/ MOBILE */
+/ Mobile */
 @media (max-width: 600px) {
+  h1 {
+    font-size: 34px;
+  }
+
   .events {
     flex-direction: column;
   }
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 248, 240, 0.85);
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 50px;
-  color: #8b5e83;
-}
-
-section {
-  padding: 40px 20px;
-}
-
-a {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 16px;
-  background: #8b5e83;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
 }
