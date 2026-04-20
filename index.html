@@ -4,7 +4,9 @@
   <title>Sangavi & Lokesh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Great+Vibes&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -17,14 +19,14 @@
   </div>
 </div>
 
-<!-- 🎵 MUSIC BUTTON -->
+<!-- 🎼 MUSIC BUTTON -->
 <button class="music-btn" onclick="playMusic()">🎼</button>
 <audio id="bg-music" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
 <!-- 🌸 PETALS -->
-<div class="petals"></div>
+<div id="petals-container"></div>
 
 <!-- MAIN CONTENT -->
 <div id="main" class="hidden">
@@ -40,15 +42,17 @@
   </section>
 
   <section class="events">
-    <div>
+
+    <div class="event">
       <h3>Reception</h3>
       <a href="YOUR_RECEPTION_MAP" target="_blank">📍 Navigate</a>
     </div>
 
-    <div>
+    <div class="event">
       <h3>Muhurtham</h3>
       <a href="YOUR_MUHURTHAM_MAP" target="_blank">📍 Navigate</a>
     </div>
+
   </section>
 
 </div>
@@ -61,13 +65,12 @@ function openInvite() {
   document.getElementById('main').classList.remove('hidden');
 }
 
-// 🎼 MUSIC (tap required for iPhone)
+// 🎼 MUSIC
 function playMusic() {
   document.getElementById('bg-music').play();
 }
 
-// ⏳ COUNTDOWN
-<script>
+// ⏳ COUNTDOWN (FIXED)
 const weddingDate = new Date("May 25, 2026 09:00:00").getTime();
 
 setInterval(() => {
@@ -81,15 +84,16 @@ setInterval(() => {
   document.getElementById("timer").innerHTML =
     days + "d " + hours + "h " + minutes + "m";
 }, 1000);
-</script>
 
-// 🌸 PETALS
+// 🌸 PETALS (FIXED)
 setInterval(() => {
   let petal = document.createElement("div");
   petal.classList.add("petal");
+
   petal.style.left = Math.random() * 100 + "vw";
   petal.style.animationDuration = (Math.random() * 3 + 2) + "s";
-  document.body.appendChild(petal);
+
+  document.getElementById("petals-container").appendChild(petal);
 
   setTimeout(() => petal.remove(), 5000);
 }, 300);
