@@ -522,7 +522,7 @@ background-size: 300px 300px;
 <!-- Hidden Audio -->
 
 <audio id="bgMusic" loop>
-  <source src="music.mp3" type="audio/mpeg">
+  <source src="https://www.bensound.com/bensound-music/bensound-romanticserenade.mp3" type="audio/mpeg">
 </audio>
 
 <!-- ===== HERO ===== -->
@@ -777,27 +777,10 @@ for (let i = 0; i < 18; i++) {
   petalContainer.appendChild(petal);
 }
 
-<script>
 // ===== MUSIC =====
 const musicBtn = document.getElementById('musicBtn');
 const bgMusic = document.getElementById('bgMusic');
-
 let playing = false;
-
-musicBtn.addEventListener('click', () => {
-  if (!playing) {
-    bgMusic.play();
-    musicBtn.textContent = '🎶';
-    musicBtn.classList.add('playing');
-    playing = true;
-  } else {
-    bgMusic.pause();
-    musicBtn.textContent = '🎵';
-    musicBtn.classList.remove('playing');
-    playing = false;
-  }
-});
-</script>
 
 // Use a royalty-free waltz/classical piece via free CDN
 bgMusic.src = "https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3";
@@ -909,3 +892,7 @@ document.head.appendChild(style);
 
 </body>
 </html>
+
+
+
+this is the code add music.mp3 when clicked on the music symbol
