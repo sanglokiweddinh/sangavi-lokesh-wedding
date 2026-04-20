@@ -67,19 +67,21 @@ function playMusic() {
 }
 
 // ⏳ COUNTDOWN
+<script>
 const weddingDate = new Date("May 25, 2026 09:00:00").getTime();
 
 setInterval(() => {
   let now = new Date().getTime();
   let gap = weddingDate - now;
 
-  let days = Math.floor(gap / (1000606024));
-  let hours = Math.floor((gap % (1000606024)) / (10006060));
-  let mins = Math.floor((gap % (10006060)) / (1000*60));
+  let days = Math.floor(gap / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((gap / (1000 * 60 * 60)) % 24);
+  let minutes = Math.floor((gap / (1000 * 60)) % 60);
 
   document.getElementById("timer").innerHTML =
-    days + "d " + hours + "h " + mins + "m";
+    days + "d " + hours + "h " + minutes + "m";
 }, 1000);
+</script>
 
 // 🌸 PETALS
 setInterval(() => {
