@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  background: #fff8f0;
+}
+
+/* 💌 ENVELOPE /
+.envelope {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.letter {
+  border: 2px solid gold;
+  padding: 30px;
+  border-radius: 10px;
+  background: white;
+  font-family: 'Great Vibes', cursive;
+  font-size: 24px;
+}
+
+/ HIDDEN MAIN /
+.hidden {
+  display: none;
+}
+
+/ HERO /
+.hero {
+  padding: 50px;
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 42px;
+  color: #8b5e83;
+}
+
+/ COUNTDOWN /
+.countdown {
+  padding: 30px;
+  font-size: 20px;
+}
+
+/ EVENTS /
+.events {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+/ 🎼 BUTTON /
+.music-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  border: none;
+  background: #8b5e83;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+/ 🌸 PETALS /
+.petal {
+  position: fixed;
+  top: -10px;
+  width: 10px;
+  height: 10px;
+  background: pink;
+  border-radius: 50%;
+  animation: fall linear;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+/ MOBILE */
+@media (max-width: 600px) {
+  .events {
+    flex-direction: column;
+  }
+}
