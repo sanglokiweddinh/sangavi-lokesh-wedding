@@ -1,102 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Sangavi & Lokesh</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sangavi ❤️ Lokesh</title>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
-  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <!-- 💌 ENVELOPE -->
-<div class="envelope" onclick="openInvite()">
-  <div class="letter">
-    <p>Tap to Open</p>
-  </div>
+<div class="envelope" id="envelope">
+  <div class="flap"></div>
+  <div class="letter">Tap to Open 💌</div>
 </div>
 
-<!-- 🎼 MUSIC BUTTON -->
-<button class="music-btn" onclick="playMusic()">🎼</button>
-<audio id="bg-music" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
-
-<!-- 🌸 PETALS -->
-<div id="petals-container"></div>
-
-<!-- MAIN CONTENT -->
+<!-- 🌸 MAIN CONTENT -->
 <div id="main" class="hidden">
 
+  <!-- HERO -->
   <section class="hero">
     <h1>Sangavi & Lokesh</h1>
     <p>May 25, 2026</p>
   </section>
 
-  <section class="countdown">
-    <h2>Countdown</h2>
-    <p id="timer"></p>
-  </section>
+  <!-- 🎵 SPOTIFY PLAYER -->
+  <div class="player">
+    <img src="couple.jpg" class="cover">
 
+    <div class="info">
+      <h3>Wildest Dreams</h3>
+      <p>Bridgerton Violin</p>
+
+      <button id="playBtn">▶</button>
+    </div>
+  </div>
+
+  <!-- EVENTS -->
   <section class="events">
 
-    <div class="event">
-      <h3>Reception</h3>
-      <a href="YOUR_RECEPTION_MAP" target="_blank">📍 Navigate</a>
+    <div class="card">
+      <h3>Muhurtham</h3>
+      <p>9:00 AM – 10:30 AM</p>
+      <a href="YOUR_MUHURTHAM_MAP" target="_blank">📍 Navigate</a>
     </div>
 
-    <div class="event">
-      <h3>Muhurtham</h3>
-      <a href="YOUR_MUHURTHAM_MAP" target="_blank">📍 Navigate</a>
+    <div class="card">
+      <h3>Reception</h3>
+      <p>7 PM onwards</p>
+      <a href="YOUR_RECEPTION_MAP" target="_blank">📍 Navigate</a>
     </div>
 
   </section>
 
 </div>
 
+<!-- 🎼 MUSIC -->
+<audio id="music">
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
 <script>
 
-// 💌 OPEN ENVELOPE
-function openInvite() {
-  document.querySelector('.envelope').style.display = 'none';
-  document.getElementById('main').classList.remove('hidden');
-}
+// 💌 Envelope open
+document.getElementById("envelope").addEventListener("click", () => {
+  let env = document.getElementById("envelope");
 
-// 🎼 MUSIC
-function playMusic() {
-  document.getElementById('bg-music').play();
-}
+  env.classList.add("open");
 
-// ⏳ COUNTDOWN (FIXED)
-const weddingDate = new Date("May 25, 2026 09:00:00").getTime();
+  setTimeout(() => {
+    env.style.display = "none";
+    document.getElementById("main").classList.remove("hidden");
+  }, 1200);
+});
 
-setInterval(() => {
-  let now = new Date().getTime();
-  let gap = weddingDate - now;
+// 🎵 Music play
+const music = document.getElementById("music");
+const btn = document.getElementById("playBtn");
 
-  let days = Math.floor(gap / (1000 * 60 * 60 * 24));
-  let hours = Math.floor((gap / (1000 * 60 * 60)) % 24);
-  let minutes = Math.floor((gap / (1000 * 60)) % 60);
-
-  document.getElementById("timer").innerHTML =
-    days + "d " + hours + "h " + minutes + "m";
-}, 1000);
-
-// 🌸 PETALS (FIXED)
-setInterval(() => {
-  let petal = document.createElement("div");
-  petal.classList.add("petal");
-
-  petal.style.left = Math.random() * 100 + "vw";
-  petal.style.animationDuration = (Math.random() * 3 + 2) + "s";
-
-  document.getElementById("petals-container").appendChild(petal);
-
-  setTimeout(() => petal.remove(), 5000);
-}, 300);
+btn.addEventListener("click", () => {
+  if (music.paused) {
+    music.play();
+    btn.innerHTML = "⏸";
+  } else {
+    music.pause();
+    btn.innerHTML = "▶";
+  }
+});
 
 </script>
 
