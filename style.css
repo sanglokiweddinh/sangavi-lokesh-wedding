@@ -3,6 +3,9 @@ body {
   font-family: 'Playfair Display', serif;
   text-align: center;
   background: url('images/bg.jpg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 /* 💌 ENVELOPE /
 .envelope {
