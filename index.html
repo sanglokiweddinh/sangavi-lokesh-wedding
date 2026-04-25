@@ -388,9 +388,30 @@ footer{background:linear-gradient(180deg,#1a0810,#0f0508);text-align:center;padd
     <div class="sp-times"><span id="spCur">0:00</span><span>3:24</span></div>
 
     <div class="sp-ctrls">
-      <button class="sp-b" onclick="skipBack()">⏮</button>
-      <button class="sp-play" id="spBtn" onclick="togglePlay()">▶</button>
-      <button class="sp-b" onclick="skipFwd()">⏭</button>
+      <!-- skip back -->
+      <button class="sp-b" onclick="skipBack()" aria-label="Restart">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="19,5 9,12 19,19" fill="currentColor"/>
+          <rect x="5" y="5" width="3" height="14" rx="1.5" fill="currentColor"/>
+        </svg>
+      </button>
+      <!-- play/pause -->
+      <button class="sp-play" id="spBtn" onclick="togglePlay()" aria-label="Play">
+        <svg id="iconPlay" width="20" height="20" viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="6,3 21,12 6,21" fill="black"/>
+        </svg>
+        <svg id="iconPause" width="20" height="20" viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg" style="display:none">
+          <rect x="5" y="3" width="4" height="18" rx="2" fill="black"/>
+          <rect x="15" y="3" width="4" height="18" rx="2" fill="black"/>
+        </svg>
+      </button>
+      <!-- skip forward -->
+      <button class="sp-b" onclick="skipFwd()" aria-label="Skip">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="5,5 15,12 5,19" fill="currentColor"/>
+          <rect x="16" y="5" width="3" height="14" rx="1.5" fill="currentColor"/>
+        </svg>
+      </button>
     </div>
 
   </div>
@@ -539,14 +560,20 @@ function togglePlay(){
   playing = !playing;
   const btn  = document.getElementById('spBtn');
   const ring = document.getElementById('spRing');
+  const iconPlay  = document.getElementById('iconPlay');
+  const iconPause = document.getElementById('iconPause');
   if(playing){
     audio.play();
-    btn.textContent='⏸'; btn.classList.add('on');
+    iconPlay.style.display  = 'none';
+    iconPause.style.display = 'block';
+    btn.classList.add('on');
     ring.classList.add('spin');
     progInterval = setInterval(updateProg, 500);
   } else {
     audio.pause();
-    btn.textContent='▶'; btn.classList.remove('on');
+    iconPlay.style.display  = 'block';
+    iconPause.style.display = 'none';
+    btn.classList.remove('on');
     ring.classList.remove('spin');
     clearInterval(progInterval);
   }
