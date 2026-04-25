@@ -219,13 +219,16 @@ transition:transform .3s,box-shadow .3s;
 .c-lbl{font-family:‘Cinzel’,serif;font-size:8px;letter-spacing:1.5px;color:var(–gold);text-transform:uppercase;margin-bottom:2px}
 .c-inf{font-family:‘Cormorant Garamond’,serif;font-size:16px;line-height:1.45;color:var(–text)}
 .map-btn{
-display:inline-flex;align-items:center;gap:8px;margin-top:16px;
-padding:11px 26px;background:linear-gradient(135deg,var(–rose),var(–deep));
-color:#fff;text-decoration:none;border-radius:60px;
-font-family:‘Cinzel’,serif;font-size:8.5px;letter-spacing:3px;text-transform:uppercase;
-box-shadow:0 5px 18px rgba(122,51,72,.3);transition:all .3s;
+display:flex;align-items:center;justify-content:center;gap:8px;margin-top:18px;
+padding:14px 0;width:100%;
+background:linear-gradient(135deg,#c2798a,#7a3348);
+color:#fff !important;text-decoration:none;border-radius:60px;
+font-family:Arial,Helvetica,sans-serif;
+font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+box-shadow:0 5px 18px rgba(122,51,72,.35);transition:all .3s;
 }
-.map-btn:hover{transform:translateY(-2px);box-shadow:0 9px 26px rgba(122,51,72,.45)}
+.map-btn:hover{transform:translateY(-2px);box-shadow:0 9px 26px rgba(122,51,72,.5)}
+.map-btn span{color:#fff !important}
 
 /* countdown */
 .cd-bg{background:linear-gradient(160deg,#2a0d1a,#1a0810,#200d1a)}
@@ -292,7 +295,6 @@ footer{background:linear-gradient(180deg,#1a0810,#0f0508);text-align:center;padd
 
   <div class="hero">
     <div class="h-orn">✦ &nbsp; A Wedding Invitation &nbsp; ✦</div>
-    <div class="h-tamil">அவலம் நாடும்</div>
     <div class="dv">❧</div>
     <div class="h-together">Together with their families</div>
     <div class="h-names">Lokesh <span class="h-amp">&amp;</span> Sangavi</div>
@@ -431,8 +433,8 @@ footer{background:linear-gradient(180deg,#1a0810,#0f0508);text-align:center;padd
   <div class="c-tag">🌸 The Sacred Ceremony</div>
   <div class="c-nm">Muhurtham</div>
   <div class="c-row"><span class="c-ico">🕘</span><div><div class="c-lbl">Date & Time</div><div class="c-inf">Monday, 25th May 2026<br>9:00 AM – 10:30 AM</div></div></div>
-  <div class="c-row"><span class="c-ico">🏛</span><div><div class="c-lbl">Venue</div><div class="c-inf">G.M. Hall<br>72, N Mada St, Thirunagar<br>Vadapalani, Chennai – 600 026</div></div></div>
-  <a class="map-btn" href="https://maps.google.com/?q=72+N+Mada+St+Thirunagar+Vadapalani+Chennai+600026" target="_blank">📍 &nbsp;Get Directions</a>
+  <div class="c-row"><span class="c-ico">🏛</span><div><div class="c-lbl">Venue</div><div class="c-inf">G.M. Hall<br>72, N Mada St, Thirunagar<br>Vadapalani, Chennai – 600 026<br><span style="color:var(--gold);font-size:14px">📌 Backside of Vadapalani Murugan Koil</span></div></div></div>
+  <a class="map-btn" href="https://maps.google.com/?q=72+N+Mada+St+Thirunagar+Vadapalani+Chennai+600026" target="_blank"><span style="font-size:13px">📍</span><span>Get Directions</span></a>
 </div>
 
 <div class="card sr">
@@ -440,8 +442,8 @@ footer{background:linear-gradient(180deg,#1a0810,#0f0508);text-align:center;padd
   <div class="c-tag">🥂 The Grand Celebration</div>
   <div class="c-nm">Reception</div>
   <div class="c-row"><span class="c-ico">🌙</span><div><div class="c-lbl">Date & Time</div><div class="c-inf">Monday, 25th May 2026<br>7:00 PM Onwards</div></div></div>
-  <div class="c-row"><span class="c-ico">🏛</span><div><div class="c-lbl">Venue</div><div class="c-inf">Cantonment Board<br>Thirumana Mandapam<br>Grand Southern Trunk Rd<br>Pallavaram, Chennai – 600 043</div></div></div>
-  <a class="map-btn" href="https://maps.google.com/?q=Cantonment+Board+Thirumana+Mandapam+Pallavaram+Chennai" target="_blank">📍 &nbsp;Get Directions</a>
+  <div class="c-row"><span class="c-ico">🏛</span><div><div class="c-lbl">Venue</div><div class="c-inf">Cantonment Board<br>Thirumana Mandapam<br>Grand Southern Trunk Rd<br>Pallavaram, Chennai – 600 043<br><span style="color:var(--gold);font-size:14px">📌 Near Pallavaram Bus Stand</span></div></div></div>
+  <a class="map-btn" href="https://maps.google.com/?q=Cantonment+Board+Thirumana+Mandapam+Pallavaram+Chennai" target="_blank"><span style="font-size:13px">📍</span><span>Get Directions</span></a>
 </div>
 ```
 
